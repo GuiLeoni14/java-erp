@@ -1,20 +1,18 @@
 <th:block th:fragment="head">
 	<meta charset="UTF-8" />
-	<link rel="stylesheet"
-		  href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
-		  integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z"
-		  crossorigin="anonymous">
-			
-	<link rel="stylesheet" 
-	      href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
-	
-	<script src="https://code.jquery.com/jquery-3.5.1.js"
-	        integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
-	        crossorigin="anonymous">
-	</script>
-	
-	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"
-	        integrity="sha256-T0Vest3yCU7pafRw9r+settMBX6JkKN06dqBnpQ8d30="
-	        crossorigin="anonymous">
-	</script>
+	<title>Crud Manager</title>
+
+	<!-- Tailwind CSS -->
+	<script src="https://cdn.tailwindcss.com"></script>
+
+	<nav class="bg-gray-900 bg-opacity-90 p-4 shadow-lg">
+		<div class="container mx-auto flex items-center justify-between">
+			<a th:href="@{/}" class="text-white text-xl font-bold">Sistema ERP</a>
+			<div class="space-x-4">
+				<a th:href="@{/categories}" class="text-gray-300 hover:text-white">Categorias</a>
+				<a th:href="@{/products}" class="text-gray-300 hover:text-white">Produtos</a>
+				<a th:href="@{/users}" class="text-gray-300 hover:text-white">Usuários</a>
+			</div>
+		</div>
+	</nav>
 </th:block>

@@ -11,13 +11,13 @@ public class Category {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
-    @NotBlank(message = "Category name cannot be blank.")
+    @NotBlank(message = "Categoria não pode ser vazio.")
     private String name;
 
-    @NotBlank(message = "Category description cannot be blank.")
+    @NotBlank(message = "Descrição não pode ser vazio.")
     private String description;
 
-    @NotBlank(message = "Category code cannot be blank.")
+    @NotBlank(message = "Categoria código não pode ser vazio.")
     @Column(unique = true)
     private String code;
 

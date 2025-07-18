@@ -13,18 +13,18 @@ public class Product {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
-    @NotBlank(message = "Product name cannot be blank.")
+    @NotBlank(message = "Nome não pode ser vazio.")
     private String name;
 
-    @NotBlank(message = "Product description cannot be blank.")
+    @NotBlank(message = "Descrição não pode ser vazio.")
     private String description;
 
-    @NotNull(message = "Price cannot be null.")
-    @DecimalMin(value = "0.01", message = "Price must be greater than zero.")
+    @NotNull(message = "Proço não pode ser vazio ou zero")
+    @DecimalMin(value = "0.01", message = "Preço não pode ser 0.0")
     private BigDecimal price;
 
-    @NotNull(message = "Stock cannot be null.")
-    @Min(value = 0, message = "Stock must be zero or greater.")
+    @NotNull(message = "Estoque não pode ser vazio ou zero.")
+    @Min(value = 0, message = "Estoque não pode ser vazio ou zero.")
     private Integer stock;
 
     @ManyToOne(optional = false)

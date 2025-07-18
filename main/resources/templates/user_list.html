@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	  xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head>
+	<div th:replace="cabecalho :: head"></div>
+	<title>Crud Manager Spring - Usuários</title>
+</head>
+
+<body class="bg-gray-100 min-h-screen">
+<div class="max-w-7xl mx-auto px-4 py-10">
+	<div class="flex items-center justify-between mb-6">
+		<h1 class="text-3xl font-bold text-gray-800">Usuários</h1>
+		<a th:href="@{/users/form}"
+		   class="bg-blue-600 hover:bg-blue-700 text-white font-semibold px-5 py-2 rounded-lg transition duration-300">
+			+ Adicionar Usuário
+		</a>
+	</div>
+
+	<div class="overflow-x-auto bg-white shadow-md rounded-lg">
+		<table class="min-w-full divide-y divide-gray-200 text-sm text-left">
+			<thead class="bg-gray-100 text-gray-700 font-semibold">
+			<tr>
+				<th class="px-6 py-3">Nome</th>
+				<th class="px-6 py-3">Gênero</th>
+				<th class="px-6 py-3">E-mail</th>
+				<th class="px-6 py-3">Endereço</th>
+				<th class="px-6 py-3 text-center">Ações</th>
+			</tr>
+			</thead>
+			<tbody class="bg-white divide-y divide-gray-200" th:each="user : ${usuarios}">
+			<tr class="hover:bg-gray-50 transition">
+				<td class="px-6 py-4" th:text="${user.name}"></td>
+				<td class="px-6 py-4" th:text="${user.gender}"></td>
+				<td class="px-6 py-4" th:text="${user.email}"></td>
+				<td class="px-6 py-4" th:text="${user.address.place + ', nº ' + user.address.number}"></td>
+				<td class="px-6 py-4 flex justify-center space-x-2">
+					<a th:href="@{/users/update/{id}(id=${user.id})}"
+					   class="bg-gray-400 hover:bg-gray-500 text-white px-3 py-1 rounded-md text-sm">
+						Editar
+					</a>
+					<a th:href="@{/users/delete/{id}(id=${user.id})}"
+					   class="bg-red-600 hover:bg-red-700 text-white px-3 py-1 rounded-md text-sm">
+						Deletar
+					</a>
+				</td>
+			</tr>
+			</tbody>
+		</table>
+	</div>
+</div>
+</body>
+</html>
